@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Girlfriend?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #e75480;
+      font-size: 2.5rem;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yesBtn {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #d3d3d3;
+      color: black;
+      position: absolute;
+    }
+
+    .message {
+      display: none;
+      padding: 30px;
+      max-width: 600px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      color: #e75480;
+      border: 3px solid #e75480;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-color: #fff0f5;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my girlfriend?</h1>
+  <div class="buttons">
+    <button id="yesBtn" onclick="showMessage()">Yes</button>
+    <button id="noBtn" onclick="moveButton()">No</button>
+  </div>
+
+  <div class="message" id="message">
+    AAAAAA OMG I LOVE YOU RIZZYYYYYYY
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const message = document.getElementById('message');
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+
+    function showMessage() {
+      document.querySelector('.buttons').style.display = 'none';
+      document.querySelector('h1').style.display = 'none';
+      message.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
